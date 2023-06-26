@@ -38,6 +38,7 @@ type Message struct {
 }
 
 func (m Message) GetTime() string {
+	return ""
 	return fmt.Sprintf(
 		"[[%s]](%s) ",
 		m.Time.Format(m.FormatTime),
@@ -53,9 +54,8 @@ func (m Message) GetThread() string {
 }
 
 func (m Message) GetName() string {
-	return fmt.Sprintf("[<%s>](%s) ",
+	return fmt.Sprintf("%s: ",
 		m.Name,
-		m.colorizeName(m.StyleName),
 	)
 }
 
